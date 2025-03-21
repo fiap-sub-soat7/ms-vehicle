@@ -28,4 +28,9 @@ export class VehicleSchema extends AbstractEntity implements IVehicle {
     default: SaleStatus.FOR_SALE,
   })
   saleStatus: SaleStatus;
+
+  @Prop({
+    default: SaleStatus.FOR_SALE,
+  })
+  clientId: string;
 }
