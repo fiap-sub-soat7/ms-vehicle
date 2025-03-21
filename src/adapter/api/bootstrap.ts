@@ -8,7 +8,7 @@ import { ExceptionsFilter } from './interceptors/exceptions.filter';
 import { TransformInterceptor } from './interceptors/transform.interceptor';
 import { RequestDataPipe } from './interceptors/transform.pipe';
 import { AppModule } from './app.module';
-import { config } from '@/infrastructure/environment';
+import { config } from '@/environment';
 
 export const httpApp = async (): Promise<void> => {
   const app = await NestFactory.create<NestFastifyApplication>(

@@ -3,9 +3,9 @@ import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { VehicleDTO } from '../../../application/presenter/vehicle/dto/vehicle.dto';
 import { VehicleCreateDTO } from '../../../application/presenter/vehicle/dto/vehicle-create.dto';
 import { CreateVehicleController } from '@/application/controller/vehicle/create-vehicle.controller';
-import { vehicleRepository } from '@/infrastructure/database/database.adapter';
 import { UpdateVehicleController } from '@/application/controller/vehicle/update-vehicle.controller';
 import { GetVehicleController } from '@/application/controller/vehicle/get-vehicles.controller';
+import { vehicleRepository } from '@/adapter/database/database.adapter';
 
 @ApiTags('Vehicle')
 @Controller()
