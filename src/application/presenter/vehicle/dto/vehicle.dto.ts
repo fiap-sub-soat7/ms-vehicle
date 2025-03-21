@@ -33,9 +33,16 @@ export class VehicleDTO extends AbstractEntity implements IVehicle {
   })
   @Expose()
   price: number;
+
   @ApiProperty({
     example: SaleStatus.SOLD,
   })
   @Expose()
   saleStatus: SaleStatus;
+
+  @ApiProperty({
+    example: "8ccf9d00-0a6b-4d61-ad48-0fc40eee2a8e",
+  })
+  @Expose()
+  clientId: string;
 }
