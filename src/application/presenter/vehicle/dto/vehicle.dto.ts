@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { Expose } from 'class-transformer';
 import { IVehicle, SaleStatus  } from '@/domain/entity/vehicle';
-import { AbstractEntity } from '@/infrastructure/database/schema/abstract-entity';
+import { AbstractEntity } from '@/adapter/database/schema/abstract-entity';
 
 export class VehicleDTO extends AbstractEntity implements IVehicle {
   @ApiProperty({

@@ -1,6 +1,6 @@
-import { config } from './infrastructure/environment';
-import { connectServiceDatabase } from './infrastructure/database/database.adapter';
-import { httpApp } from './presentation/api/bootstrap';
+import { config } from './environment';
+import { httpApp } from './adapter/api/bootstrap';
+import { connectServiceDatabase } from './adapter/database/database.adapter';
 
 /** Start database connection */
 void connectServiceDatabase(config.get('db.api'));

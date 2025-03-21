@@ -12,7 +12,7 @@ import { IOrderCreateProduct, OrderStatus, IOrder } from '@/domain/entity/vehicl
 import { VehicleDTO } from '@/application/presenter/vehicle/dto/vehicle.dto';
 import { VehicleCreateDTO } from '@/application/presenter/vehicle/dto/vehicle-create.dto';
 import { IPaymentRef } from '@/domain/entity/payment';
-import { IGateway } from '@/application/gateway/gateway.interface';
+import { IGateway } from '@/adapter/external/gateway.interface';
 import { IProductRef } from '@/domain/entity/product';
 
 export class MockProductsGateway implements IGateway<string[], IProductRef[]> {

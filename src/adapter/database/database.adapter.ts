@@ -3,7 +3,7 @@ import { createConnection, Connection, disconnect } from 'mongoose';
 import { VehicleSchema } from './schema/vehicle.schema';
 import { VehicleRepository } from './repository/vehicle.repository';
 import { Mock } from './database.mock';
-import { config } from '../environment';
+import { config } from '@/environment';
 
 const vehicleRepository = new VehicleRepository();
 
