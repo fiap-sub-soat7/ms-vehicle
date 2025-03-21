@@ -1,0 +1,132 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "tsconfig.json",
+    "sourceType": "module",
+    "ecmaVersion": 2020
+  },
+  "plugins": ["@typescript-eslint", "eslint-plugin-tsdoc"],
+  "extends": [
+    "airbnb-base",
+    "airbnb-typescript/base",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:promise/recommended",
+    "plugin:import/typescript",
+    "plugin:prettier/recommended",
+    "prettier"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "root": true,
+  "env": {
+    "node": true,
+    "jest": true
+  },
+  "rules": {
+    "no-multiple-empty-lines": "error",
+    "no-multi-spaces": "error",
+    "require-await": "error",
+    "no-return-await": "error",
+    "no-useless-constructor": "off",
+    "import/prefer-default-export": "off",
+    "class-methods-use-this": "off",
+    "quote-props": 2,
+    "default-case": 0,
+    "prefer-template": "error",
+    "quotes": ["error", "single"],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "import/no-cycle": 2,
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never",
+        "": "never"
+      }
+    ],
+    "tsdoc/syntax": "warn",
+    // 'no-shadow': 'off',
+    "no-underscore-dangle": "off",
+    "arrow-body-style": ["error", "as-needed"],
+    "arrow-spacing": ["error", { "before": true, "after": true }],
+    "comma-spacing": ["error", { "before": false, "after": true }],
+    "no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_"
+      }
+    ],
+    "no-param-reassign": "error", //['error', { "props": false }],
+    "no-unused-expressions": "error",
+    "no-unreachable": "error",
+    "no-plusplus": 0,
+    "no-continue": 0,
+    "no-trailing-spaces": 2,
+    "no-console": "warn",
+    "@typescript-eslint/no-floating-promises": [
+      "error",
+      { "ignoreVoid": true }
+    ],
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { "argsIgnorePattern": "_" }
+    ],
+    "@typescript-eslint/type-annotation-spacing": [
+      "error",
+      { "before": false, "after": true }
+    ],
+    "@typescript-eslint/object-curly-spacing": ["warn", "always"],
+    "@typescript-eslint/explicit-function-return-type": ["warn", {}],
+    "@typescript-eslint/member-delimiter-style": "error",
+    /*"@typescript-eslint/indent": [
+      "error",
+      2,
+      {
+        "ignoredNodes": [
+          // 'FunctionExpression > .params[decorators.length > 0]',
+          "FunctionExpression > .params > :matches(Decorator, :not(:first-child))",
+          "ClassBody.body > PropertyDefinition[decorators.length > 0] > .key"
+        ]
+      }
+    ],*/
+    "@typescript-eslint/typedef": [
+      "error",
+      {
+        /* "arrowParameter": true, "variableDeclaration": true */
+      }
+    ],
+    "promise/always-return": 0,
+    "no-void": [2, { "allowAsStatement": true }],
+    // "function-paren-newline": ["error", "multiline-arguments"],
+
+    "no-unsafe-optional-chaining": "error"
+  },
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts"]
+    },
+    "import/extensions": [".js", ".jsx", ".ts", ".tsx"],
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
+  "overrides": [
+    {
+      "files": ["*.exception.ts"],
+      "rules": {
+        "func-names": 0,
+        "max-classes-per-file": 0
+      }
+    }
+  ]
+}

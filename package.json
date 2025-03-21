@@ -1,0 +1,90 @@
+{
+  "name": "@fiap-soat7/ms-vehicle",
+  "version": "0.0.2",
+  "description": "API - Food 75",
+  "author": "FIAP / SOAT 7 - Team 75",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git@github.com/eneilson/fiap-soat7-team75"
+  },
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "nest build api --path tsconfig.build.json",
+    "start": "nest start",
+    "start:dev": "nest start --watch",
+    "start:debug": "nest start --debug=0.0.0.0:9779 --watch",
+    "start:prod": "node dist/main",
+    "lint": "eslint \"{src,apps,libs,test,spec}/**/*.ts\" --fix",
+    "test": "jest -i --detectOpenHandles",
+    "test:watch": "jest -i --watch",
+    "test:cov": "jest -i --coverage",
+    "test:badge": "jest -i --coverage && jest-coverage-badges output './coverage'",
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "prepare": "husky install",
+    "postinstall": "husky install"
+  },
+  "dependencies": {
+    "@fastify/helmet": "10.1.0",
+    "@fastify/static": "6.12.0",
+    "@nestjs/axios": "3.0.2",
+    "@nestjs/common": "10.3.0",
+    "@nestjs/core": "10.3.0",
+    "@nestjs/mongoose": "^10.0.6",
+    "@nestjs/platform-fastify": "10.3.0",
+    "@nestjs/swagger": "7.3.1",
+    "aws": "^0.0.3-2",
+    "axios": "1.7.2",
+    "class-transformer": "0.5.1",
+    "class-validator": "0.14.0",
+    "convict": "6.2.4",
+    "cors": "2.8.5",
+    "fastify": "4.26.2",
+    "mongoose": "^8.5.1",
+    "qrcode": "^1.5.3",
+    "reflect-metadata": "0.1.13",
+    "rxjs": "7.8.0",
+    "uuid": "9.0.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "17.3.0",
+    "@commitlint/config-conventional": "17.3.0",
+    "@nestjs/cli": "^10.3.2",
+    "@nestjs/schematics": "^10.1.1",
+    "@types/compression": "^1.7.2",
+    "@types/convict": "6.1.1",
+    "@types/cors": "2.8.13",
+    "@types/jest": "29.2.4",
+    "@types/qrcode": "^1.5.5",
+    "@types/uuid": "9.0.0",
+    "@typescript-eslint/eslint-plugin": "7.8.0",
+    "@typescript-eslint/parser": "7.8.0",
+    "eslint": "^8.56.0",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-config-airbnb-typescript": "^18.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-import-resolver-typescript": "3.5.2",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-tsdoc": "0.2.17",
+    "husky": "8.0.2",
+    "jest": "29.7.0",
+    "jest-coverage-badges": "^1.1.2",
+    "lint-staged": "^15.2.5",
+    "prettier": "3.2.5",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^29.2.5",
+    "ts-loader": "9.4.2",
+    "typescript": "5.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint \"{src,apps,libs,test}/**/*.ts\"",
+      "prettier"
+    ]
+  }
+}

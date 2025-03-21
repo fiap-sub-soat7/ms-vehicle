@@ -1,0 +1,11 @@
+name: PR testing
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  test:
+      uses: fiap-soat7-75/infrastructure/.github/workflows/test-cov.yml@tcg-v4
+      secrets: 
+        DB_SVC_URL: ${{ secrets.DB_SVC_URL }}

@@ -1,0 +1,20 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceDir": "src",
+  "compilerOptions": {
+    "assets": [
+      {
+        "include": "./i18n/**/*"
+      },
+      {
+        "include": "./templates/**/*",
+        "watchAssets": true
+      },
+      {
+        "include": "../.keys",
+        "outDir": "./dist/.keys",
+        "watchAssets": true
+      }
+    ]
+  }
+}

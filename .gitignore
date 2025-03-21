@@ -1,0 +1,50 @@
+# compiled output
+/dist
+/node_modules
+/documentation
+
+# Logs
+./logs
+*.log
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Tests
+coverage/*
+!coverage/lcov.info
+!coverage/badge-*
+.nyc_output
+
+# IDEs and editors
+/.idea
+.project
+.database
+kubernetes/.database
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+.env
+.env.yaml
+
+.npmrc
+
+.docker/
+ormconfig.json
+.database
+.temp
+.husky

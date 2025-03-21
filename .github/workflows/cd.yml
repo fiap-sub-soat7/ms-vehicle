@@ -1,0 +1,34 @@
+name: MS Vehicle Deploy
+
+on:
+  push:
+    branches:
+      - tcg-v4
+
+permissions:
+  id-token: write
+  contents: write
+
+jobs:
+  build: 
+    uses: fiap-soat7-75/infrastructure/.github/workflows/build-ecr.yml@tcg-v4
+    with:
+      AWS_REGION: ${{ vars.AWS_REGION }}
+    secrets:
+      AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
+      AWS_SECRET: ${{ secrets.AWS_SECRET }}
+      AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
+    needs: [sast]
+
+  sast:
+    uses: fiap-soat7-75/infrastructure/.github/workflows/sast.yml@tcg-v4
+    secrets:
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+    needs: [test]
+
+  test:
+      uses: fiap-soat7-75/infrastructure/.github/workflows/test-cov.yml@tcg-v4
+      with:
+        COMMIT: true
+      secrets: 
+        DB_SVC_URL: ${{ secrets.DB_SVC_URL }}

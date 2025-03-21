@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "lib": ["es5", "es6", "dom", "es2017"],
+    "incremental": true,
+    "target": "ES2020",
+    "module": "commonjs",
+    "declaration": true,
+    "sourceMap": true,
+    "outDir": "./dist",
+    "removeComments": true,
+    "baseUrl": "./",
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true, 
+    "emitDecoratorMetadata": true, 
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "paths": {
+      "@/test/*": ["test/*"],
+      "@/*": ["src/*"]
+    }
+  },
+  "watchOptions": {
+    "watchFile": "priorityPollingInterval",
+    "watchDirectory": "dynamicprioritypolling",
+    "fallbackPolling": "dynamicPriority",
+    "synchronousWatchDirectory": true,
+    "excludeDirectories": ["**/node_modules", "dist"],
+    "excludeFiles": ["jest.config.ts"]
+  },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}

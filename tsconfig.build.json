@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "exclude": ["node_modules", "test", "dist", "**/*spec.ts", "output"],
+  "include": ["src/**/*"],
+  "compilerOptions": {
+    "resolveJsonModule": true,
+    "sourceMap": false,
+    "rootDir": "./src",
+    "declaration": false,
+    "incremental": false
+  },
+}
