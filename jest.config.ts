@@ -18,7 +18,9 @@ const JEST_CONFIG: JestConfigWithTsJest = {
   coveragePathIgnorePatterns: [
     'node_modules',
     'test/[^/]+.(ts|js)',
-    'src/(infrastructure|presentation)',
+    'src/adapter/api',
+    'src/main.ts',
+    'src/adapter/database'
   ],
   coverageDirectory: '<rootDir>/coverage',
   globalSetup: '<rootDir>/test/setup.ts',

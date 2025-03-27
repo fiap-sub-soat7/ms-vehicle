@@ -4,15 +4,17 @@ import { VehicleCreateDTO } from '@/application/presenter/vehicle/dto/vehicle-cr
 import { VehiclePresenter } from '@/application/presenter/vehicle/vehicle.presenter';
 import { VehicleDTO } from '@/application/presenter/vehicle/dto/vehicle.dto';
 import { IVehicleRepository } from '@/domain/repository';
-import { GetClientGateway } from '@/adapter/external/client/get-products.gateway';
+import { GetClientGateway } from '@/adapter/external/client/get-client.gateway';
 
 export class UpdateVehicleController implements IController<VehicleDTO> {
   useCase: UpdateVehicleUseCase;
+  clientGateway: GetClientGateway;
 
   constructor(
     vehicleRepository: IVehicleRepository,
+    clientGateway: GetClientGateway
   ) {
-    this.useCase = new UpdateVehicleUseCase(vehicleRepository, new GetClientGateway());
+    this.useCase = new UpdateVehicleUseCase(vehicleRepository, clientGateway);
   }
 
   async handle(id: string, data: VehicleCreateDTO): Promise<VehicleDTO> {

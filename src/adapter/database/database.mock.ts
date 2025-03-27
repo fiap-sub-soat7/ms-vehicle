@@ -1,6 +1,6 @@
 import { VehicleSchema } from './schema/vehicle.schema';
 import { IModel } from './repository/repository-base';
-import { IVehicle } from '@/domain/entity/vehicle';
+import { IVehicle, SaleStatus } from '@/domain/entity/vehicle';
 
 export class Mock {
   constructor(private readonly vehicleModel: IModel<VehicleSchema>) {}
@@ -23,6 +23,39 @@ export class Mock {
       ],
     });
     await this.vehicleModel.insertMany([
+      {
+        _id: '01e91a2c-ca78-4d09-bd83-e978cf0b5930',
+        createdAt: new Date('2024-01-01T00:00:00.000Z'),
+        brand: "Fiat",
+        model: "Mobi",
+        year: 2009,
+        color: "#000000",
+        price: 1.99,
+        saleStatus: SaleStatus.FOR_SALE,
+        clientId: "39e91a2c-ca78-4d09-bd83-e978cf0b5930"
+      },
+      {
+        id: '12e91a2c-ca78-4d09-bd83-e978cf0b5930',
+        createdAt: new Date('2024-01-01T00:00:00.000Z'),
+        brand: "Fiat",
+        model: "Mobi",
+        year: 2012,
+        color: "#000000",
+        price: 1.99,
+        saleStatus: SaleStatus.FOR_SALE,
+        clientId: "12e91a2c-ca78-4d09-bd83-e978cf0b5930"
+      },
+      {
+        id: '1391a2c-ca78-4d09-bd83-e978cf0b5930',
+        createdAt: new Date('2024-01-01T00:00:00.000Z'),
+        brand: "Fiat",
+        model: "Mobi",
+        year: 2012,
+        color: "#000000",
+        price: 1.99,
+        saleStatus: SaleStatus.FOR_SALE,
+        clientId: "13e91a2c-ca78-4d09-bd83-e978cf0b5930"
+      },
     ] as (Omit<IVehicle, 'id'> & { _id: string })[]);
 
     console.log('Inserting mock... done!');
