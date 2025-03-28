@@ -6,13 +6,14 @@ import { CreateVehicleController } from '@/application/controller/vehicle/create
 import { UpdateVehicleController } from '@/application/controller/vehicle/update-vehicle.controller';
 import { GetVehicleController } from '@/application/controller/vehicle/get-vehicles.controller';
 import { vehicleRepository } from '@/adapter/database/database.adapter';
+import { GetClientGateway } from '@/adapter/external/client/get-client.gateway';
 
 @ApiTags('Vehicle')
 @Controller()
 export class VehicleController {
   private vehicleController = new CreateVehicleController(vehicleRepository);
 
-  private updateVehicleController = new UpdateVehicleController(vehicleRepository);
+  private updateVehicleController = new UpdateVehicleController(vehicleRepository, new GetClientGateway());
 
   private getVehicleController = new GetVehicleController(vehicleRepository);
 
