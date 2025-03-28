@@ -15,9 +15,9 @@ export class Mock {
     // Vehicle
     await this.vehicleModel.deleteMany({
       $or: [
-        { _id: '1ad8f3c1-09af-4fdd-a98f-7b55b4ef4c79' },
-        { _id: '2ad8f3c1-09af-4fdd-a98f-7b55b4ef4c79' },
-        { _id: '3ad8f3c1-09af-4fdd-a98f-7b55b4ef4c79' },
+        { _id: '01e91a2c-ca78-4d09-bd83-e978cf0b5930' },
+        { _id: '12e91a2c-ca78-4d09-bd83-e978cf0b5930' },
+        { _id: '1391a2c-ca78-4d09-bd83-e978cf0b5930' },
         { _id: '4ad8f3c1-09af-4fdd-a98f-7b55b4ef4c79' },
         { _id: '5ad8f3c1-09af-4fdd-a98f-7b55b4ef4c79' },
       ],
