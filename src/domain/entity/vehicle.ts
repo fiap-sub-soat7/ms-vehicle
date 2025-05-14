@@ -7,7 +7,9 @@ export interface IVehicle {
   color: string;
   price: number;
   saleStatus?: SaleStatus;
-  clientId?: string
+  clientHolder?: string
+  saledAt?: Date;
+  updatedAt?: Date;
 }
 
 export enum SaleStatus {

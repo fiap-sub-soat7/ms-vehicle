@@ -32,7 +32,7 @@ export class Mock {
         color: "#000000",
         price: 1.99,
         saleStatus: SaleStatus.FOR_SALE,
-        clientId: "39e91a2c-ca78-4d09-bd83-e978cf0b5930"
+        clientHolder: "86071617090"
       },
       {
         id: '12e91a2c-ca78-4d09-bd83-e978cf0b5930',
@@ -43,7 +43,7 @@ export class Mock {
         color: "#000000",
         price: 1.99,
         saleStatus: SaleStatus.FOR_SALE,
-        clientId: "12e91a2c-ca78-4d09-bd83-e978cf0b5930"
+        clientHolder: "86071617090"
       },
       {
         id: '1391a2c-ca78-4d09-bd83-e978cf0b5930',
@@ -54,7 +54,7 @@ export class Mock {
         color: "#000000",
         price: 1.99,
         saleStatus: SaleStatus.FOR_SALE,
-        clientId: "13e91a2c-ca78-4d09-bd83-e978cf0b5930"
+        clientHolder: "86071617090"
       },
     ] as (Omit<IVehicle, 'id'> & { _id: string })[]);
 

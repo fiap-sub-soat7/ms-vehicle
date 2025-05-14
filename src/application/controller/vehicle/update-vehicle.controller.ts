@@ -23,8 +23,8 @@ export class UpdateVehicleController implements IController<VehicleDTO> {
     return VehiclePresenter.toDTO(vehicle);
   }
 
-  async handleVehicleClient(vehicleId: string, clientId: string): Promise<VehicleDTO> {
-    let vehicle = await this.useCase.executeVehicleClient(vehicleId, clientId);
+  async handleVehicleClient(vehicleId: string, clientHolder: string): Promise<VehicleDTO> {
+    let vehicle = await this.useCase.executeVehicleClient(vehicleId, clientHolder);
 
     return VehiclePresenter.toDTO(vehicle);
   }

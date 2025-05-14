@@ -50,14 +50,14 @@ export class VehicleController {
      return this.getVehicleController.handle(status);
    }
 
-   @Patch(':vehicleId/client/:clientId')
+   @Patch(':vehicleId/client/:clientHolder')
    @ApiOperation({ summary: 'Update vehicle client' })
    @ApiResponse({
      status: 200,
      description: 'Links a customer to a vehicle.',
      type: VehicleDTO,
    })
-   updateVehicleClient(@Param('vehicleId') vehicleId: string, @Param('clientId') clientId: string): Promise<VehicleDTO> {
-     return this.updateVehicleController.handleVehicleClient(vehicleId, clientId);
+   updateVehicleClient(@Param('vehicleId') vehicleId: string, @Param('clientHolder') clientHolder: string): Promise<VehicleDTO> {
+     return this.updateVehicleController.handleVehicleClient(vehicleId, clientHolder);
    }
 }

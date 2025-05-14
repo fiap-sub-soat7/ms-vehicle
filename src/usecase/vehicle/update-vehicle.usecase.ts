@@ -12,23 +12,20 @@ export class UpdateVehicleUseCase implements IUseCase<IVehicle> {
 
   execute(vehicleId: string, vehicle: IVehicle): Promise<IVehicle> {
     // TODO: need to validate update props
+    vehicle.updatedAt = new Date()
 
     return this.vehicleRepository.updateOne(vehicleId, vehicle);
   }
 
-  async executeVehicleClient(vehicleId: string, clientId: string): Promise<IVehicle> {
+  async executeVehicleClient(vehicleId: string, clientHolder: string): Promise<IVehicle> {
     const vehicle = await this.vehicleRepository.findById(vehicleId)
     if (!vehicle) {
       throw new Error("vehicle not found");
     }
 
-    const client = await this.clientGateway.handle(clientId)
-    if (!client) {
-      throw new Error("client not found");
-    }
-
     vehicle.saleStatus = SaleStatus.SOLD
-    vehicle.clientId = clientId
+    vehicle.saledAt = new Date()
+    vehicle.clientHolder = clientHolder
 
     return this.vehicleRepository.updateOne(vehicleId, vehicle);
   }
